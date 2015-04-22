@@ -1,0 +1,6 @@
+D:\Junk\OpsUI\Opportunity\Opportunity\bin\Opportunity.dll.config
+D:\Junk\OpsUI\Opportunity\Opportunity\bin\Opportunity.dll
+D:\Junk\OpsUI\Opportunity\Opportunity\bin\Opportunity.pdb
+D:\Junk\OpsUI\Opportunity\Opportunity\obj\Debug\Opportunity.csprojResolveAssemblyReference.cache
+D:\Junk\OpsUI\Opportunity\Opportunity\obj\Debug\Opportunity.dll
+D:\Junk\OpsUI\Opportunity\Opportunity\obj\Debug\Opportunity.pdb

@@ -4,3 +4,9 @@ D:\Junk\OpsUI\Opportunity\Opportunity\bin\Opportunity.pdb
 D:\Junk\OpsUI\Opportunity\Opportunity\obj\Debug\Opportunity.csprojResolveAssemblyReference.cache
 D:\Junk\OpsUI\Opportunity\Opportunity\obj\Debug\Opportunity.dll
 D:\Junk\OpsUI\Opportunity\Opportunity\obj\Debug\Opportunity.pdb
+D:\Research\Ops\UI\OpsProjVS\Opportunity\bin\Opportunity.dll.config
+D:\Research\Ops\UI\OpsProjVS\Opportunity\bin\Opportunity.dll
+D:\Research\Ops\UI\OpsProjVS\Opportunity\bin\Opportunity.pdb
+D:\Research\Ops\UI\OpsProjVS\Opportunity\obj\Debug\Opportunity.dll
+D:\Research\Ops\UI\OpsProjVS\Opportunity\obj\Debug\Opportunity.pdb
+D:\Research\Ops\UI\OpsProjVS\Opportunity\obj\Debug\Opportunity.csprojResolveAssemblyReference.cache

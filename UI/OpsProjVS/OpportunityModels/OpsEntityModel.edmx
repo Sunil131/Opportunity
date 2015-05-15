@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbOpsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Network">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NetworkCircleID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="NetworkCircle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumberType" Type="int" />
+        </EntityType>
+        <EntityType Name="NetworkPlan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NetworkID" Type="int" />
+          <Property Name="UserNumerID" Type="int" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="Validity" Type="int" Nullable="false" />
+          <Property Name="MisDescription1" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription2" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription3" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription4" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription5" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription6" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription7" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription8" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription9" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MisDescription10" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="NumberType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumberType" Type="int" />
+        </EntityType>
+        <EntityType Name="TransactionStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserNumber">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumerTypeID" Type="int" />
+          <Property Name="Number" Type="nvarchar" MaxLength="30" />
+          <Property Name="CreateOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserPassword">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsRegistered" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreateOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserTransaction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="NetworkPlanID" Type="int" />
+          <Property Name="TransactionStatusID" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="CreateOn" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_NetworkCircle_ID">
+          <End Role="NetworkCircle" Type="Self.NetworkCircle" Multiplicity="0..1" />
+          <End Role="Network" Type="Self.Network" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkCircle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Network">
+              <PropertyRef Name="NetworkCircleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NetworkID_NetworkPlan">
+          <End Role="Network" Type="Self.Network" Multiplicity="0..1" />
+          <End Role="NetworkPlan" Type="Self.NetworkPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Network">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NetworkPlan">
+              <PropertyRef Name="NetworkID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NetworkPlan_UserNumberID">
+          <End Role="UserNumber" Type="Self.UserNumber" Multiplicity="0..1" />
+          <End Role="NetworkPlan" Type="Self.NetworkPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserNumber">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NetworkPlan">
+              <PropertyRef Name="UserNumerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NUMBERTYPE">
+          <End Role="NumberType" Type="Self.NumberType" Multiplicity="0..1" />
+          <End Role="UserNumber" Type="Self.UserNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NumberType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserNumber">
+              <PropertyRef Name="NumerTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionStatusID">
+          <End Role="TransactionStatus" Type="Self.TransactionStatus" Multiplicity="1" />
+          <End Role="UserTransaction" Type="Self.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="TransactionStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERID_USER_ID">
+          <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+          <End Role="UserPassword" Type="Self.UserPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPassword">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbOpsModelStoreContainer">
+          <EntitySet Name="Network" EntityType="Self.Network" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NetworkCircle" EntityType="Self.NetworkCircle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NetworkPlan" EntityType="Self.NetworkPlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NumberType" EntityType="Self.NumberType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionStatus" EntityType="Self.TransactionStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserNumber" EntityType="Self.UserNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPassword" EntityType="Self.UserPassword" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTransaction" EntityType="Self.UserTransaction" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_NetworkCircle_ID" Association="Self.FK_NetworkCircle_ID">
+            <End Role="NetworkCircle" EntitySet="NetworkCircle" />
+            <End Role="Network" EntitySet="Network" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NetworkID_NetworkPlan" Association="Self.FK_NetworkID_NetworkPlan">
+            <End Role="Network" EntitySet="Network" />
+            <End Role="NetworkPlan" EntitySet="NetworkPlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NetworkPlan_UserNumberID" Association="Self.FK_NetworkPlan_UserNumberID">
+            <End Role="UserNumber" EntitySet="UserNumber" />
+            <End Role="NetworkPlan" EntitySet="NetworkPlan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NUMBERTYPE" Association="Self.FK_NUMBERTYPE">
+            <End Role="NumberType" EntitySet="NumberType" />
+            <End Role="UserNumber" EntitySet="UserNumber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionStatusID" Association="Self.FK_TransactionStatusID">
+            <End Role="TransactionStatus" EntitySet="TransactionStatus" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERID_USER_ID" Association="Self.FK_USERID_USER_ID">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="UserPassword" EntitySet="UserPassword" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbOpsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Network">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NetworkCircleID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NetworkCircle" Relationship="Self.FK_NetworkCircle_ID" FromRole="Network" ToRole="NetworkCircle" />
+          <NavigationProperty Name="NetworkPlans" Relationship="Self.FK_NetworkID_NetworkPlan" FromRole="Network" ToRole="NetworkPlan" />
+        </EntityType>
+        <EntityType Name="NetworkCircle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumberType" Type="Int32" />
+          <NavigationProperty Name="Networks" Relationship="Self.FK_NetworkCircle_ID" FromRole="NetworkCircle" ToRole="Network" />
+        </EntityType>
+        <EntityType Name="NetworkPlan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NetworkID" Type="Int32" />
+          <Property Name="UserNumerID" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Validity" Type="Int32" Nullable="false" />
+          <Property Name="MisDescription1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription3" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription4" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription5" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription6" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription7" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription8" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription9" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="MisDescription10" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Network" Relationship="Self.FK_NetworkID_NetworkPlan" FromRole="NetworkPlan" ToRole="Network" />
+          <NavigationProperty Name="UserNumber" Relationship="Self.FK_NetworkPlan_UserNumberID" FromRole="NetworkPlan" ToRole="UserNumber" />
+        </EntityType>
+        <EntityType Name="NumberType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumberType1" Type="Int32" />
+          <NavigationProperty Name="UserNumbers" Relationship="Self.FK_NUMBERTYPE" FromRole="NumberType" ToRole="UserNumber" />
+        </EntityType>
+        <EntityType Name="TransactionStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UserTransactions" Relationship="Self.FK_TransactionStatusID" FromRole="TransactionStatus" ToRole="UserTransaction" />
+        </EntityType>
+        <EntityType Name="UserNumber">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumerTypeID" Type="Int32" />
+          <Property Name="Number" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CreateOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="NetworkPlans" Relationship="Self.FK_NetworkPlan_UserNumberID" FromRole="UserNumber" ToRole="NetworkPlan" />
+          <NavigationProperty Name="NumberType" Relationship="Self.FK_NUMBERTYPE" FromRole="UserNumber" ToRole="NumberType" />
+        </EntityType>
+        <EntityType Name="UserPassword">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="USER" Relationship="Self.FK_USERID_USER_ID" FromRole="UserPassword" ToRole="USERS" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsRegistered" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreateOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UserPasswords" Relationship="Self.FK_USERID_USER_ID" FromRole="USERS" ToRole="UserPassword" />
+        </EntityType>
+        <EntityType Name="UserTransaction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="NetworkPlanID" Type="Int32" />
+          <Property Name="TransactionStatusID" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CreateOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TransactionStatu" Relationship="Self.FK_TransactionStatusID" FromRole="UserTransaction" ToRole="TransactionStatus" />
+        </EntityType>
+        <Association Name="FK_NetworkCircle_ID">
+          <End Role="NetworkCircle" Type="Self.NetworkCircle" Multiplicity="0..1" />
+          <End Role="Network" Type="Self.Network" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkCircle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Network">
+              <PropertyRef Name="NetworkCircleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NetworkID_NetworkPlan">
+          <End Role="Network" Type="Self.Network" Multiplicity="0..1" />
+          <End Role="NetworkPlan" Type="Self.NetworkPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Network">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NetworkPlan">
+              <PropertyRef Name="NetworkID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NetworkPlan_UserNumberID">
+          <End Role="UserNumber" Type="Self.UserNumber" Multiplicity="0..1" />
+          <End Role="NetworkPlan" Type="Self.NetworkPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserNumber">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NetworkPlan">
+              <PropertyRef Name="UserNumerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NUMBERTYPE">
+          <End Role="NumberType" Type="Self.NumberType" Multiplicity="0..1" />
+          <End Role="UserNumber" Type="Self.UserNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NumberType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserNumber">
+              <PropertyRef Name="NumerTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransactionStatusID">
+          <End Role="TransactionStatus" Type="Self.TransactionStatu" Multiplicity="1" />
+          <End Role="UserTransaction" Type="Self.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransactionStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="TransactionStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERID_USER_ID">
+          <End Role="USERS" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="UserPassword" Type="Self.UserPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPassword">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbOpsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Networks" EntityType="Self.Network" />
+          <EntitySet Name="NetworkCircles" EntityType="Self.NetworkCircle" />
+          <EntitySet Name="NetworkPlans" EntityType="Self.NetworkPlan" />
+          <EntitySet Name="NumberTypes" EntityType="Self.NumberType" />
+          <EntitySet Name="TransactionStatus" EntityType="Self.TransactionStatu" />
+          <EntitySet Name="UserNumbers" EntityType="Self.UserNumber" />
+          <EntitySet Name="UserPasswords" EntityType="Self.UserPassword" />
+          <EntitySet Name="USERS" EntityType="Self.USER" />
+          <EntitySet Name="UserTransactions" EntityType="Self.UserTransaction" />
+          <AssociationSet Name="FK_NetworkCircle_ID" Association="Self.FK_NetworkCircle_ID">
+            <End Role="NetworkCircle" EntitySet="NetworkCircles" />
+            <End Role="Network" EntitySet="Networks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NetworkID_NetworkPlan" Association="Self.FK_NetworkID_NetworkPlan">
+            <End Role="Network" EntitySet="Networks" />
+            <End Role="NetworkPlan" EntitySet="NetworkPlans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NetworkPlan_UserNumberID" Association="Self.FK_NetworkPlan_UserNumberID">
+            <End Role="UserNumber" EntitySet="UserNumbers" />
+            <End Role="NetworkPlan" EntitySet="NetworkPlans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NUMBERTYPE" Association="Self.FK_NUMBERTYPE">
+            <End Role="NumberType" EntitySet="NumberTypes" />
+            <End Role="UserNumber" EntitySet="UserNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransactionStatusID" Association="Self.FK_TransactionStatusID">
+            <End Role="TransactionStatus" EntitySet="TransactionStatus" />
+            <End Role="UserTransaction" EntitySet="UserTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERID_USER_ID" Association="Self.FK_USERID_USER_ID">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="UserPassword" EntitySet="UserPasswords" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbOpsModelStoreContainer" CdmEntityContainer="dbOpsEntities">
+          <EntitySetMapping Name="Networks">
+            <EntityTypeMapping TypeName="dbOpsModel.Network">
+              <MappingFragment StoreEntitySet="Network">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NetworkCircleID" ColumnName="NetworkCircleID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetworkCircles">
+            <EntityTypeMapping TypeName="dbOpsModel.NetworkCircle">
+              <MappingFragment StoreEntitySet="NetworkCircle">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NumberType" ColumnName="NumberType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetworkPlans">
+            <EntityTypeMapping TypeName="dbOpsModel.NetworkPlan">
+              <MappingFragment StoreEntitySet="NetworkPlan">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+                <ScalarProperty Name="UserNumerID" ColumnName="UserNumerID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Validity" ColumnName="Validity" />
+                <ScalarProperty Name="MisDescription1" ColumnName="MisDescription1" />
+                <ScalarProperty Name="MisDescription2" ColumnName="MisDescription2" />
+                <ScalarProperty Name="MisDescription3" ColumnName="MisDescription3" />
+                <ScalarProperty Name="MisDescription4" ColumnName="MisDescription4" />
+                <ScalarProperty Name="MisDescription5" ColumnName="MisDescription5" />
+                <ScalarProperty Name="MisDescription6" ColumnName="MisDescription6" />
+                <ScalarProperty Name="MisDescription7" ColumnName="MisDescription7" />
+                <ScalarProperty Name="MisDescription8" ColumnName="MisDescription8" />
+                <ScalarProperty Name="MisDescription9" ColumnName="MisDescription9" />
+                <ScalarProperty Name="MisDescription10" ColumnName="MisDescription10" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NumberTypes">
+            <EntityTypeMapping TypeName="dbOpsModel.NumberType">
+              <MappingFragment StoreEntitySet="NumberType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NumberType1" ColumnName="NumberType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionStatus">
+            <EntityTypeMapping TypeName="dbOpsModel.TransactionStatu">
+              <MappingFragment StoreEntitySet="TransactionStatus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserNumbers">
+            <EntityTypeMapping TypeName="dbOpsModel.UserNumber">
+              <MappingFragment StoreEntitySet="UserNumber">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NumerTypeID" ColumnName="NumerTypeID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPasswords">
+            <EntityTypeMapping TypeName="dbOpsModel.UserPassword">
+              <MappingFragment StoreEntitySet="UserPassword">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="dbOpsModel.USER">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="IsRegistered" ColumnName="IsRegistered" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTransactions">
+            <EntityTypeMapping TypeName="dbOpsModel.UserTransaction">
+              <MappingFragment StoreEntitySet="UserTransaction">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="NetworkPlanID" ColumnName="NetworkPlanID" />
+                <ScalarProperty Name="TransactionStatusID" ColumnName="TransactionStatusID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

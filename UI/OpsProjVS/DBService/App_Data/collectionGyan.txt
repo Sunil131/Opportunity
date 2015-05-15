@@ -1,0 +1,11 @@
+IEnumerable<T> is the base interface that the following extend or implement. It doesn't allow for direct access and is readonly. So use this only if you intend to iterate over the collection.
+
+ICollection<T> extendsIEnumerable<T> but in addition allows for adding, removing, testing whether an element is present in the collection and getting the total number of elements. It doesn't allow for directly accessing an element by index. That would be an O(n) operation as you need to start iterating over it until you find the corresponding element.
+
+IList<T> extends ICollection<T> (and thus it inherits all its properties) but in addition allows for directly accessing elements by index. It's an O(1) operation.
+
+List<T> is just a concrete implementation of the IList<T> interface.
+
+In your code you should always expose the type that's highest in the object hierarchy that will correspond to the needs of the callers. So for example if the callers are only going to enumerate over the dataset, use IEnumerable<T>. If they need to have direct access to elements by index expose an IList<T>.
+
+List<T> should only be used internally by your code but usually not present in the signature of the methods you are exposing. This gives you more flexibility as you could easily swap the concrete implementation without breaking the contract.

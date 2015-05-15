@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbOpsModelStoreContainer" CdmEntityContainer="dbOpsEntities">
+    <EntitySetMapping Name="Networks">
+      <EntityTypeMapping TypeName="dbOpsModel.Network">
+        <MappingFragment StoreEntitySet="Network">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NetworkCircleID" ColumnName="NetworkCircleID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetworkCircles">
+      <EntityTypeMapping TypeName="dbOpsModel.NetworkCircle">
+        <MappingFragment StoreEntitySet="NetworkCircle">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NumberType" ColumnName="NumberType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NetworkPlans">
+      <EntityTypeMapping TypeName="dbOpsModel.NetworkPlan">
+        <MappingFragment StoreEntitySet="NetworkPlan">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+          <ScalarProperty Name="UserNumerID" ColumnName="UserNumerID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Validity" ColumnName="Validity" />
+          <ScalarProperty Name="MisDescription1" ColumnName="MisDescription1" />
+          <ScalarProperty Name="MisDescription2" ColumnName="MisDescription2" />
+          <ScalarProperty Name="MisDescription3" ColumnName="MisDescription3" />
+          <ScalarProperty Name="MisDescription4" ColumnName="MisDescription4" />
+          <ScalarProperty Name="MisDescription5" ColumnName="MisDescription5" />
+          <ScalarProperty Name="MisDescription6" ColumnName="MisDescription6" />
+          <ScalarProperty Name="MisDescription7" ColumnName="MisDescription7" />
+          <ScalarProperty Name="MisDescription8" ColumnName="MisDescription8" />
+          <ScalarProperty Name="MisDescription9" ColumnName="MisDescription9" />
+          <ScalarProperty Name="MisDescription10" ColumnName="MisDescription10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NumberTypes">
+      <EntityTypeMapping TypeName="dbOpsModel.NumberType">
+        <MappingFragment StoreEntitySet="NumberType">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NumberType1" ColumnName="NumberType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionStatus">
+      <EntityTypeMapping TypeName="dbOpsModel.TransactionStatu">
+        <MappingFragment StoreEntitySet="TransactionStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserNumbers">
+      <EntityTypeMapping TypeName="dbOpsModel.UserNumber">
+        <MappingFragment StoreEntitySet="UserNumber">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NumerTypeID" ColumnName="NumerTypeID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPasswords">
+      <EntityTypeMapping TypeName="dbOpsModel.UserPassword">
+        <MappingFragment StoreEntitySet="UserPassword">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="dbOpsModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="IsRegistered" ColumnName="IsRegistered" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTransactions">
+      <EntityTypeMapping TypeName="dbOpsModel.UserTransaction">
+        <MappingFragment StoreEntitySet="UserTransaction">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NetworkPlanID" ColumnName="NetworkPlanID" />
+          <ScalarProperty Name="TransactionStatusID" ColumnName="TransactionStatusID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

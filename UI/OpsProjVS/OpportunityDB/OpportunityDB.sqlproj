@@ -7,7 +7,7 @@
     <Name>OpportunityDB</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{a6021523-a3b6-4913-b9f0-74129d81669c}</ProjectGuid>
+    <ProjectGuid>{2b715e13-1507-41be-a8b5-7780a8a7bee0}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -57,5 +57,22 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="DBComparison" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\UserTransaction.sql" />
+    <Build Include="dbo\Tables\USERS.sql" />
+    <Build Include="dbo\Tables\UserPassword.sql" />
+    <Build Include="dbo\Tables\UserNumber.sql" />
+    <Build Include="dbo\Tables\TransactionStatus.sql" />
+    <Build Include="dbo\Tables\NumberType.sql" />
+    <Build Include="dbo\Tables\NetworkPlan.sql" />
+    <Build Include="dbo\Tables\NetworkCircle.sql" />
+    <Build Include="dbo\Tables\Network.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DBComparison\SqlSchemaCompare1.scmp" />
   </ItemGroup>
 </Project>

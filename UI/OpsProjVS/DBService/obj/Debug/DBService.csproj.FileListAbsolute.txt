@@ -1,0 +1,7 @@
+D:\Research\Ops\UI\OpsProjVS\DBService\bin\Debug\App_Data\OpportunityDB.mdf
+D:\Research\Ops\UI\OpsProjVS\DBService\bin\Debug\App_Data\OpportunityDB_log.ldf
+D:\Research\Ops\UI\OpsProjVS\DBService\bin\Debug\DBService.dll
+D:\Research\Ops\UI\OpsProjVS\DBService\bin\Debug\DBService.pdb
+D:\Research\Ops\UI\OpsProjVS\DBService\obj\Debug\DBService.csprojResolveAssemblyReference.cache
+D:\Research\Ops\UI\OpsProjVS\DBService\obj\Debug\DBService.dll
+D:\Research\Ops\UI\OpsProjVS\DBService\obj\Debug\DBService.pdb

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+using OpportunityModels.Configs;
 
 namespace OpportunityService
 {
@@ -17,8 +18,10 @@ namespace OpportunityService
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
+            UnityConfig.RegisterComponents();   
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
+            AutoMapperConfig.MapObjects();
+            }
     }
 }

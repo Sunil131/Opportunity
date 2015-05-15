@@ -1,0 +1,7 @@
+D:\Research\Ops\UI\OpsProjVS\OpportunityDB\bin\Debug\OpportunityDB.dacpac
+D:\Research\Ops\UI\OpsProjVS\OpportunityDB\obj\Debug\Model.xml
+D:\Research\Ops\UI\OpsProjVS\OpportunityDB\obj\Debug\refactor.xml
+D:\Research\Ops\UI\OpsProjVS\OpportunityDB\obj\Debug\postdeploy.sql
+D:\Research\Ops\UI\OpsProjVS\OpportunityDB\obj\Debug\predeploy.sql
+D:\Research\Ops\UI\OpsProjVS\OpportunityDB\obj\Debug\OpportunityDB.dll
+D:\Research\Ops\UI\OpsProjVS\OpportunityDB\obj\Debug\OpportunityDB.pdb

@@ -1,0 +1,10 @@
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\Opportunity\bin\Opportunity.dll
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\Opportunity\bin\Opportunity.pdb
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\Opportunity\obj\Debug\OpportunityUI.csprojResolveAssemblyReference.cache
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\Opportunity\obj\Debug\Opportunity.dll
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\Opportunity\obj\Debug\Opportunity.pdb
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\bin\Opportunity.dll
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\bin\Opportunity.pdb
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\obj\Debug\OpportunityUI.csprojResolveAssemblyReference.cache
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\obj\Debug\Opportunity.dll
+D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\obj\Debug\Opportunity.pdb

@@ -14,7 +14,8 @@ namespace OpportunityService.Controllers
     {
         private IUsersRepoService _userReporService;
 
-        private UserController(IUsersRepoService userReporService)
+
+        public UserController(IUsersRepoService userReporService)
         {
             _userReporService = userReporService;
         }
@@ -32,18 +33,19 @@ namespace OpportunityService.Controllers
         }
 
         // POST: api/User
-        public void AddUser([FromBody]string value)
+        public bool Post([FromBody]string value)
         {
             ApplicationUserModel userModel = new ApplicationUserModel()
             {
-                ID = 1,
-                email = "Sunilm@ObjectFrontier.com",
+                //ID=4,
+                email = "Sunilm12@ObjectFrontier.com",
+                Password="test1@123",
                 IsDeleted = false,
                 IsRegsitered = true,
-                NAME = "Sunil Mehta",
+                NAME = "Sunil1 Mehta",
                 CreatedOn = DateTime.Now
             };
-            _userReporService.RegisterUser(userModel);
+            return _userReporService.RegisterUser(userModel);
         }
 
         // PUT: api/User/5
@@ -55,5 +57,7 @@ namespace OpportunityService.Controllers
         public void Delete(int id)
         {
         }
+
+        //public IHttpActionResult 
     }
 }

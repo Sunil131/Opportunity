@@ -8,9 +8,11 @@ namespace OpportunityModels.Model
 {
     public class ApplicationUserModel
     {
-        public int ID { get; set; }
+        //public int ID { get; set; }
         public string email { get; set; }
         public string NAME { get; set; }
+        public int UserID { get; set; }
+        public string Password { get; set; }
         public bool IsRegsitered { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreatedOn { get; set; }

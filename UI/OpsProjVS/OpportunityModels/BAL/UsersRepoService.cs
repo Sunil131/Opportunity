@@ -16,11 +16,20 @@ namespace OpportunityModels.BAL
         public bool RegisterUser(ApplicationUserModel applicationUserModel)
         {
            var user = Mapper.Map<USER>(applicationUserModel);
+           var userPassword = Mapper.Map<UserPassword>(applicationUserModel);
+           //userPassword.UserID = user.ID;
+
            int success = 0;
            using (dbOpsEntities e = new dbOpsEntities())
            {
                e.USERS.Add(user);
-            success =  e.SaveChanges();
+               success = e.SaveChanges();
+
+               userPassword.UserID = user.ID;
+               e.UserPasswords.Add(userPassword);
+
+               e.SaveChanges();
+               
            }
             return (success > 0 )?true:false;
         }

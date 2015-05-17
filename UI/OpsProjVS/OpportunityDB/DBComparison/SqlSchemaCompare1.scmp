@@ -2,15 +2,15 @@
 <SchemaComparison>
   <Version>10</Version>
   <SourceModelProvider>
-    <ConnectionBasedModelProvider>
-      <ConnectionString>Data Source=PC1431;Initial Catalog=dbOps;User ID=sa;Pooling=False</ConnectionString>
-    </ConnectionBasedModelProvider>
-  </SourceModelProvider>
-  <TargetModelProvider>
     <ProjectBasedModelProvider>
       <ProjectGuid>{2b715e13-1507-41be-a8b5-7780a8a7bee0}</ProjectGuid>
       <Name>OpportunityDB</Name>
     </ProjectBasedModelProvider>
+  </SourceModelProvider>
+  <TargetModelProvider>
+    <ConnectionBasedModelProvider>
+      <ConnectionString>Data Source=SUNILVAIO-PC\SQLEXPRESS;Initial Catalog=OpsDB;Persist Security Info=True;User ID=sa;Pooling=False</ConnectionString>
+    </ConnectionBasedModelProvider>
   </TargetModelProvider>
   <SchemaCompareSettingsService>
     <SchemaCompareSettingsService>
@@ -99,10 +99,6 @@
       <PropertyElementName>
         <Name>DropRoleMembersNotInSource</Name>
         <Value>False</Value>
-      </PropertyElementName>
-      <PropertyElementName>
-        <Name>DropStatisticsNotInSource</Name>
-        <Value>True</Value>
       </PropertyElementName>
       <PropertyElementName>
         <Name>GenerateSmartDefaults</Name>
@@ -311,10 +307,6 @@
       <PropertyElementName>
         <Name>VerifyDeployment</Name>
         <Value>True</Value>
-      </PropertyElementName>
-      <PropertyElementName>
-        <Name>RunDeploymentPlanExecutors</Name>
-        <Value>False</Value>
       </PropertyElementName>
       <PropertyElementName>
         <Name>AllowDropBlockingAssemblies</Name>

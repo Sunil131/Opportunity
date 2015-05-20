@@ -1,0 +1,25 @@
+
+Insert into Network (NetworkCode,Name) values 	('AC','AIRCEL');
+Insert into Network (NetworkCode,Name) values 	('AT','Bharti Airtel');
+Insert into Network (NetworkCode,Name) values 	('CC','BSNL - CellOne CDMA');
+Insert into Network (NetworkCode,Name) values 	('CG','BSNL - CellOne GSM');
+Insert into Network (NetworkCode,Name) values 	('DC','Videocon');
+Insert into Network (NetworkCode,Name) values 	('DP','MTNL - DOLPHIN');
+Insert into Network (NetworkCode,Name) values 	('ET','Etisalat');
+Insert into Network (NetworkCode,Name) values 	('ID','IDEA');
+Insert into Network (NetworkCode,Name) values 	('LM','Loop Mobile');
+Insert into Network (NetworkCode,Name) values 	('MT','MTS India');
+Insert into Network (NetworkCode,Name) values 	('PG','PING CDMA');
+Insert into Network (NetworkCode,Name) values 	('RC','Reliance Mobile CDMA');
+Insert into Network (NetworkCode,Name) values 	('RG','Reliance Mobile GSM');
+Insert into Network (NetworkCode,Name) values 	('RJ','Reliance Jio Infocomm');
+Insert into Network (NetworkCode,Name) values 	('SP','Spice Digital');
+Insert into Network (NetworkCode,Name) values 	('ST','S Tel');
+Insert into Network (NetworkCode,Name) values 	('T24','T24 (BIG BAZAAR)');
+Insert into Network (NetworkCode,Name) values 	('TD','TATA DOCOMO');
+Insert into Network (NetworkCode,Name) values 	('TI','Tata Indicom');
+Insert into Network (NetworkCode,Name) values 	('UN','Uninor');
+Insert into Network (NetworkCode,Name) values 	('VC','Virgin Mobile India CDMA');
+Insert into Network (NetworkCode,Name) values 	('VG','Virgin Mobile India GSM');
+Insert into Network (NetworkCode,Name) values 	('VF','Vodafone India');
+Insert into Network (NetworkCode,Name) values 	('VD','Videocon Mobile Services');

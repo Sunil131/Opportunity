@@ -10,5 +10,7 @@ namespace OpportunityModels.IBAL
     public interface IUsersRepoService
     {
         bool RegisterUser(ApplicationUserModel userModel);
+
+        IEnumerable<ApplicationUserModel> GetUser();
     }
 }

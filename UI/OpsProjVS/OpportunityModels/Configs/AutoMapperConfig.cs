@@ -17,6 +17,8 @@ namespace OpportunityModels.Configs
         {
             Mapper.CreateMap<ApplicationUserModel, USER>();
             Mapper.CreateMap<ApplicationUserModel, UserPassword>();
+            
+            Mapper.CreateMap<USER, ApplicationUserModel>();
 
         }
     }

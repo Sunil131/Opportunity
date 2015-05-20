@@ -33,5 +33,13 @@ namespace OpportunityModels.BAL
            }
             return (success > 0 )?true:false;
         }
+
+
+        public IEnumerable<ApplicationUserModel> GetUser()
+        {
+            dbOpsEntities e = new dbOpsEntities();
+            IEnumerable<ApplicationUserModel> users =  (IEnumerable<ApplicationUserModel>)(Mapper.Map<IEnumerable<ApplicationUserModel>>(e.USERS.AsEnumerable()));
+            return users;
+        }
     }
 }

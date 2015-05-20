@@ -5,15 +5,16 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NetworkCircleID" Type="int" />
     <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="NetworkCode" Type="nvarchar" MaxLength="5" Nullable="false" />
   </EntityType>
   <EntityType Name="NetworkCircle">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NumberType" Type="int" />
+    <Property Name="OpertorCircleCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="OpertorCircleDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="NetworkPlan">
     <Key>
@@ -34,6 +35,15 @@
     <Property Name="MisDescription8" Type="nvarchar" MaxLength="1000" />
     <Property Name="MisDescription9" Type="nvarchar" MaxLength="1000" />
     <Property Name="MisDescription10" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="NumberNetworkCircle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumberStartup" Type="int" Nullable="false" />
+    <Property Name="NetworkCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="NetworkCircleCode" Type="nvarchar" MaxLength="5" />
   </EntityType>
   <EntityType Name="NumberType">
     <Key>
@@ -90,18 +100,6 @@
     <Property Name="Amount" Type="money" />
     <Property Name="CreateOn" Type="datetime" />
   </EntityType>
-  <Association Name="FK_NetworkCircle_ID">
-    <End Role="NetworkCircle" Type="Self.NetworkCircle" Multiplicity="0..1" />
-    <End Role="Network" Type="Self.Network" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NetworkCircle">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Network">
-        <PropertyRef Name="NetworkCircleID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_NetworkID_NetworkPlan">
     <End Role="Network" Type="Self.Network" Multiplicity="0..1" />
     <End Role="NetworkPlan" Type="Self.NetworkPlan" Multiplicity="*" />
@@ -166,16 +164,13 @@
     <EntitySet Name="Network" EntityType="Self.Network" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NetworkCircle" EntityType="Self.NetworkCircle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NetworkPlan" EntityType="Self.NetworkPlan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NumberNetworkCircle" EntityType="Self.NumberNetworkCircle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NumberType" EntityType="Self.NumberType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TransactionStatus" EntityType="Self.TransactionStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserNumber" EntityType="Self.UserNumber" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserPassword" EntityType="Self.UserPassword" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserTransaction" EntityType="Self.UserTransaction" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_NetworkCircle_ID" Association="Self.FK_NetworkCircle_ID">
-      <End Role="NetworkCircle" EntitySet="NetworkCircle" />
-      <End Role="Network" EntitySet="Network" />
-    </AssociationSet>
     <AssociationSet Name="FK_NetworkID_NetworkPlan" Association="Self.FK_NetworkID_NetworkPlan">
       <End Role="Network" EntitySet="Network" />
       <End Role="NetworkPlan" EntitySet="NetworkPlan" />

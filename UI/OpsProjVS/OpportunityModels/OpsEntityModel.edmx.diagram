@@ -5,21 +5,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d3311107229644be828e0cb32037161d" Name="Diagram1">
-        <EntityTypeShape EntityType="dbOpsModel.Network" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOpsModel.NetworkCircle" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOpsModel.NetworkPlan" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOpsModel.NumberType" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOpsModel.TransactionStatu" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOpsModel.UserNumber" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOpsModel.UserPassword" Width="1.5" PointX="8" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOpsModel.USER" Width="1.5" PointX="5.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbOpsModel.UserTransaction" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
-        <AssociationConnector Association="dbOpsModel.FK_NetworkCircle_ID" ManuallyRouted="false" />
-        <AssociationConnector Association="dbOpsModel.FK_NetworkID_NetworkPlan" ManuallyRouted="false" />
-        <AssociationConnector Association="dbOpsModel.FK_NetworkPlan_UserNumberID" ManuallyRouted="false" />
-        <AssociationConnector Association="dbOpsModel.FK_NUMBERTYPE" ManuallyRouted="false" />
-        <AssociationConnector Association="dbOpsModel.FK_TransactionStatusID" ManuallyRouted="false" />
-        <AssociationConnector Association="dbOpsModel.FK_USERID_USER_ID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbOpsModel.Network" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="dbOpsModel.NetworkCircle" Width="1.5" PointX="7.75" PointY="2.25" />
+        <EntityTypeShape EntityType="dbOpsModel.NetworkPlan" Width="1.5" PointX="5.25" PointY="2.5" />
+        <EntityTypeShape EntityType="dbOpsModel.NumberNetworkCircle" Width="1.5" PointX="7.75" PointY="5.25" />
+        <EntityTypeShape EntityType="dbOpsModel.NumberType" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="dbOpsModel.TransactionStatu" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="dbOpsModel.UserNumber" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="dbOpsModel.UserPassword" Width="1.5" PointX="8" PointY="8.5" />
+        <EntityTypeShape EntityType="dbOpsModel.USER" Width="1.5" PointX="5.75" PointY="8.375" />
+        <EntityTypeShape EntityType="dbOpsModel.UserTransaction" Width="1.5" PointX="3" PointY="8.375" />
+        <AssociationConnector Association="dbOpsModel.FK_NetworkID_NetworkPlan" />
+        <AssociationConnector Association="dbOpsModel.FK_NetworkPlan_UserNumberID" />
+        <AssociationConnector Association="dbOpsModel.FK_NUMBERTYPE" />
+        <AssociationConnector Association="dbOpsModel.FK_TransactionStatusID" />
+        <AssociationConnector Association="dbOpsModel.FK_USERID_USER_ID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

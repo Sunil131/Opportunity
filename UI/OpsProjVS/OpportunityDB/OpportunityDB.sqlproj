@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{2b715e13-1507-41be-a8b5-7780a8a7bee0}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -71,8 +71,13 @@
     <Build Include="dbo\Tables\NetworkPlan.sql" />
     <Build Include="dbo\Tables\NetworkCircle.sql" />
     <Build Include="dbo\Tables\Network.sql" />
+    <Build Include="dbo\Tables\NumberNetworkCircle.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DBComparison\SqlSchemaCompare1.scmp" />
+    <None Include="OpportunityDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

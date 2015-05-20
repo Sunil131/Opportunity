@@ -1,22 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbOpsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dbOpsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Networks" EntityType="dbOpsModel.Network" />
+    <EntitySet Name="NetworkCircles" EntityType="dbOpsModel.NetworkCircle" />
+    <EntitySet Name="NetworkPlans" EntityType="dbOpsModel.NetworkPlan" />
+    <EntitySet Name="NumberNetworkCircles" EntityType="dbOpsModel.NumberNetworkCircle" />
+    <EntitySet Name="NumberTypes" EntityType="dbOpsModel.NumberType" />
+    <EntitySet Name="TransactionStatus" EntityType="dbOpsModel.TransactionStatu" />
+    <EntitySet Name="UserNumbers" EntityType="dbOpsModel.UserNumber" />
+    <EntitySet Name="UserPasswords" EntityType="dbOpsModel.UserPassword" />
+    <EntitySet Name="USERS" EntityType="dbOpsModel.USER" />
+    <EntitySet Name="UserTransactions" EntityType="dbOpsModel.UserTransaction" />
+    <AssociationSet Name="FK_NetworkID_NetworkPlan" Association="dbOpsModel.FK_NetworkID_NetworkPlan">
+      <End Role="Network" EntitySet="Networks" />
+      <End Role="NetworkPlan" EntitySet="NetworkPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NetworkPlan_UserNumberID" Association="dbOpsModel.FK_NetworkPlan_UserNumberID">
+      <End Role="UserNumber" EntitySet="UserNumbers" />
+      <End Role="NetworkPlan" EntitySet="NetworkPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NUMBERTYPE" Association="dbOpsModel.FK_NUMBERTYPE">
+      <End Role="NumberType" EntitySet="NumberTypes" />
+      <End Role="UserNumber" EntitySet="UserNumbers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransactionStatusID" Association="dbOpsModel.FK_TransactionStatusID">
+      <End Role="TransactionStatu" EntitySet="TransactionStatus" />
+      <End Role="UserTransaction" EntitySet="UserTransactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERID_USER_ID" Association="dbOpsModel.FK_USERID_USER_ID">
+      <End Role="USER" EntitySet="USERS" />
+      <End Role="UserPassword" EntitySet="UserPasswords" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Network">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NetworkCircleID" Type="Int32" />
     <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="NetworkCircle" Relationship="Self.FK_NetworkCircle_ID" FromRole="Network" ToRole="NetworkCircle" />
-    <NavigationProperty Name="NetworkPlans" Relationship="Self.FK_NetworkID_NetworkPlan" FromRole="Network" ToRole="NetworkPlan" />
+    <Property Name="NetworkCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NetworkPlans" Relationship="dbOpsModel.FK_NetworkID_NetworkPlan" FromRole="Network" ToRole="NetworkPlan" />
   </EntityType>
   <EntityType Name="NetworkCircle">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NumberType" Type="Int32" />
-    <NavigationProperty Name="Networks" Relationship="Self.FK_NetworkCircle_ID" FromRole="NetworkCircle" ToRole="Network" />
+    <Property Name="OpertorCircleCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="OpertorCircleDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="NetworkPlan">
     <Key>
@@ -25,7 +56,7 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NetworkID" Type="Int32" />
     <Property Name="UserNumerID" Type="Int32" />
-    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
     <Property Name="Validity" Type="Int32" Nullable="false" />
     <Property Name="MisDescription1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="MisDescription2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
@@ -37,8 +68,17 @@
     <Property Name="MisDescription8" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="MisDescription9" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="MisDescription10" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Network" Relationship="Self.FK_NetworkID_NetworkPlan" FromRole="NetworkPlan" ToRole="Network" />
-    <NavigationProperty Name="UserNumber" Relationship="Self.FK_NetworkPlan_UserNumberID" FromRole="NetworkPlan" ToRole="UserNumber" />
+    <NavigationProperty Name="Network" Relationship="dbOpsModel.FK_NetworkID_NetworkPlan" FromRole="NetworkPlan" ToRole="Network" />
+    <NavigationProperty Name="UserNumber" Relationship="dbOpsModel.FK_NetworkPlan_UserNumberID" FromRole="NetworkPlan" ToRole="UserNumber" />
+  </EntityType>
+  <EntityType Name="NumberNetworkCircle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumberStartup" Type="Int32" Nullable="false" />
+    <Property Name="NetworkCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="NetworkCircleCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="NumberType">
     <Key>
@@ -46,15 +86,15 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NumberType1" Type="Int32" />
-    <NavigationProperty Name="UserNumbers" Relationship="Self.FK_NUMBERTYPE" FromRole="NumberType" ToRole="UserNumber" />
+    <NavigationProperty Name="UserNumbers" Relationship="dbOpsModel.FK_NUMBERTYPE" FromRole="NumberType" ToRole="UserNumber" />
   </EntityType>
   <EntityType Name="TransactionStatu">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="StatusName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="UserTransactions" Relationship="Self.FK_TransactionStatusID" FromRole="TransactionStatus" ToRole="UserTransaction" />
+    <Property Name="StatusName" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserTransactions" Relationship="dbOpsModel.FK_TransactionStatusID" FromRole="TransactionStatu" ToRole="UserTransaction" />
   </EntityType>
   <EntityType Name="UserNumber">
     <Key>
@@ -64,8 +104,8 @@
     <Property Name="NumerTypeID" Type="Int32" />
     <Property Name="Number" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="CreateOn" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="NetworkPlans" Relationship="Self.FK_NetworkPlan_UserNumberID" FromRole="UserNumber" ToRole="NetworkPlan" />
-    <NavigationProperty Name="NumberType" Relationship="Self.FK_NUMBERTYPE" FromRole="UserNumber" ToRole="NumberType" />
+    <NavigationProperty Name="NetworkPlans" Relationship="dbOpsModel.FK_NetworkPlan_UserNumberID" FromRole="UserNumber" ToRole="NetworkPlan" />
+    <NavigationProperty Name="NumberType" Relationship="dbOpsModel.FK_NUMBERTYPE" FromRole="UserNumber" ToRole="NumberType" />
   </EntityType>
   <EntityType Name="UserPassword">
     <Key>
@@ -76,7 +116,7 @@
     <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CreatedOn" Type="DateTime" Precision="3" />
     <Property Name="IsActive" Type="Boolean" />
-    <NavigationProperty Name="USER" Relationship="Self.FK_USERID_USER_ID" FromRole="UserPassword" ToRole="USERS" />
+    <NavigationProperty Name="USER" Relationship="dbOpsModel.FK_USERID_USER_ID" FromRole="UserPassword" ToRole="USER" />
   </EntityType>
   <EntityType Name="USER">
     <Key>
@@ -88,7 +128,7 @@
     <Property Name="IsRegistered" Type="Boolean" />
     <Property Name="IsDeleted" Type="Boolean" />
     <Property Name="CreateOn" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="UserPasswords" Relationship="Self.FK_USERID_USER_ID" FromRole="USERS" ToRole="UserPassword" />
+    <NavigationProperty Name="UserPasswords" Relationship="dbOpsModel.FK_USERID_USER_ID" FromRole="USER" ToRole="UserPassword" />
   </EntityType>
   <EntityType Name="UserTransaction">
     <Key>
@@ -100,23 +140,11 @@
     <Property Name="TransactionStatusID" Type="Int32" Nullable="false" />
     <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="CreateOn" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="TransactionStatu" Relationship="Self.FK_TransactionStatusID" FromRole="UserTransaction" ToRole="TransactionStatus" />
+    <NavigationProperty Name="TransactionStatu" Relationship="dbOpsModel.FK_TransactionStatusID" FromRole="UserTransaction" ToRole="TransactionStatu" />
   </EntityType>
-  <Association Name="FK_NetworkCircle_ID">
-    <End Role="NetworkCircle" Type="Self.NetworkCircle" Multiplicity="0..1" />
-    <End Role="Network" Type="Self.Network" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NetworkCircle">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Network">
-        <PropertyRef Name="NetworkCircleID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_NetworkID_NetworkPlan">
-    <End Role="Network" Type="Self.Network" Multiplicity="0..1" />
-    <End Role="NetworkPlan" Type="Self.NetworkPlan" Multiplicity="*" />
+    <End Type="dbOpsModel.Network" Role="Network" Multiplicity="0..1" />
+    <End Type="dbOpsModel.NetworkPlan" Role="NetworkPlan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Network">
         <PropertyRef Name="ID" />
@@ -127,8 +155,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_NetworkPlan_UserNumberID">
-    <End Role="UserNumber" Type="Self.UserNumber" Multiplicity="0..1" />
-    <End Role="NetworkPlan" Type="Self.NetworkPlan" Multiplicity="*" />
+    <End Type="dbOpsModel.UserNumber" Role="UserNumber" Multiplicity="0..1" />
+    <End Type="dbOpsModel.NetworkPlan" Role="NetworkPlan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserNumber">
         <PropertyRef Name="ID" />
@@ -139,8 +167,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_NUMBERTYPE">
-    <End Role="NumberType" Type="Self.NumberType" Multiplicity="0..1" />
-    <End Role="UserNumber" Type="Self.UserNumber" Multiplicity="*" />
+    <End Type="dbOpsModel.NumberType" Role="NumberType" Multiplicity="0..1" />
+    <End Type="dbOpsModel.UserNumber" Role="UserNumber" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="NumberType">
         <PropertyRef Name="ID" />
@@ -151,10 +179,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TransactionStatusID">
-    <End Role="TransactionStatus" Type="Self.TransactionStatu" Multiplicity="1" />
-    <End Role="UserTransaction" Type="Self.UserTransaction" Multiplicity="*" />
+    <End Type="dbOpsModel.TransactionStatu" Role="TransactionStatu" Multiplicity="1" />
+    <End Type="dbOpsModel.UserTransaction" Role="UserTransaction" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TransactionStatus">
+      <Principal Role="TransactionStatu">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="UserTransaction">
@@ -163,10 +191,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_USERID_USER_ID">
-    <End Role="USERS" Type="Self.USER" Multiplicity="0..1" />
-    <End Role="UserPassword" Type="Self.UserPassword" Multiplicity="*" />
+    <End Type="dbOpsModel.USER" Role="USER" Multiplicity="0..1" />
+    <End Type="dbOpsModel.UserPassword" Role="UserPassword" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="USERS">
+      <Principal Role="USER">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="UserPassword">
@@ -174,39 +202,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="dbOpsEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Networks" EntityType="Self.Network" />
-    <EntitySet Name="NetworkCircles" EntityType="Self.NetworkCircle" />
-    <EntitySet Name="NetworkPlans" EntityType="Self.NetworkPlan" />
-    <EntitySet Name="NumberTypes" EntityType="Self.NumberType" />
-    <EntitySet Name="TransactionStatus" EntityType="Self.TransactionStatu" />
-    <EntitySet Name="UserNumbers" EntityType="Self.UserNumber" />
-    <EntitySet Name="UserPasswords" EntityType="Self.UserPassword" />
-    <EntitySet Name="USERS" EntityType="Self.USER" />
-    <EntitySet Name="UserTransactions" EntityType="Self.UserTransaction" />
-    <AssociationSet Name="FK_NetworkCircle_ID" Association="Self.FK_NetworkCircle_ID">
-      <End Role="NetworkCircle" EntitySet="NetworkCircles" />
-      <End Role="Network" EntitySet="Networks" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NetworkID_NetworkPlan" Association="Self.FK_NetworkID_NetworkPlan">
-      <End Role="Network" EntitySet="Networks" />
-      <End Role="NetworkPlan" EntitySet="NetworkPlans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NetworkPlan_UserNumberID" Association="Self.FK_NetworkPlan_UserNumberID">
-      <End Role="UserNumber" EntitySet="UserNumbers" />
-      <End Role="NetworkPlan" EntitySet="NetworkPlans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NUMBERTYPE" Association="Self.FK_NUMBERTYPE">
-      <End Role="NumberType" EntitySet="NumberTypes" />
-      <End Role="UserNumber" EntitySet="UserNumbers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TransactionStatusID" Association="Self.FK_TransactionStatusID">
-      <End Role="TransactionStatus" EntitySet="TransactionStatus" />
-      <End Role="UserTransaction" EntitySet="UserTransactions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_USERID_USER_ID" Association="Self.FK_USERID_USER_ID">
-      <End Role="USERS" EntitySet="USERS" />
-      <End Role="UserPassword" EntitySet="UserPasswords" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

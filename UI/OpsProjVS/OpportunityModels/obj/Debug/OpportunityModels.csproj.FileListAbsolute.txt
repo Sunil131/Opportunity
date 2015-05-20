@@ -22,3 +22,17 @@ D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\EntityFra
 D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\obj\Debug\OpportunityModels.csprojResolveAssemblyReference.cache
 D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\obj\Debug\OpportunityModels.dll
 D:\Oppotunity\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\obj\Debug\OpportunityModels.pdb
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\AutoMapper.Net4.dll
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\OpportunityModels.dll.config
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\OpportunityModels.dll
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\OpportunityModels.pdb
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\AutoMapper.dll
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\EntityFramework.dll
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\EntityFramework.SqlServer.dll
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\AutoMapper.pdb
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\AutoMapper.xml
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\AutoMapper.Net4.pdb
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\EntityFramework.xml
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\EntityFramework.SqlServer.xml
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\obj\Debug\OpportunityModels.dll
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\obj\Debug\OpportunityModels.pdb

@@ -20,10 +20,9 @@ namespace OpportunityModels
         }
     
         public int ID { get; set; }
-        public Nullable<int> NetworkCircleID { get; set; }
         public string Name { get; set; }
+        public string NetworkCode { get; set; }
     
-        public virtual NetworkCircle NetworkCircle { get; set; }
         public virtual ICollection<NetworkPlan> NetworkPlans { get; set; }
     }
 }

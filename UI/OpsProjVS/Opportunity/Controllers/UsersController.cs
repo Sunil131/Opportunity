@@ -6,6 +6,10 @@ using System.Net.Http;
 using System.Web.Http;
 using OpportunityModels.IBAL;
 using OpportunityModels.Model;
+using OpportunityModels.Configs;
+using OpportunityModels;
+
+
 
 namespace OpportunityService.Controllers
 {
@@ -19,9 +23,17 @@ namespace OpportunityService.Controllers
         }
 
         // GET api/users
-        public IEnumerable<string> Get()
+        //public IEnumerable<ApplicationUserModel> Get()
+        //{
+        //    //return new string[] { "value1", "value2" };
+        //    var users = _userRepoService.GetUser();
+        //    return users;
+        //}
+        public HttpResponseMessage Get()
         {
-            return new string[] { "value1", "value2" };
+            //return new string[] { "value1", "value2" };
+            var users = _userRepoService.GetUser();
+            return Request.CreateResponse(HttpStatusCode.OK, users);
         }
 
         // GET api/users/5

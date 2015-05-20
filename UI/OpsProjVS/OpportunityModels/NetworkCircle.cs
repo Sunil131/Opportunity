@@ -14,14 +14,8 @@ namespace OpportunityModels
     
     public partial class NetworkCircle
     {
-        public NetworkCircle()
-        {
-            this.Networks = new HashSet<Network>();
-        }
-    
         public int ID { get; set; }
-        public Nullable<int> NumberType { get; set; }
-    
-        public virtual ICollection<Network> Networks { get; set; }
+        public string OpertorCircleCode { get; set; }
+        public string OpertorCircleDescription { get; set; }
     }
 }

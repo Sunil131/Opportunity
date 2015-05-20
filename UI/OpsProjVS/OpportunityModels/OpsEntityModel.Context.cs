@@ -28,6 +28,7 @@ namespace OpportunityModels
         public virtual DbSet<Network> Networks { get; set; }
         public virtual DbSet<NetworkCircle> NetworkCircles { get; set; }
         public virtual DbSet<NetworkPlan> NetworkPlans { get; set; }
+        public virtual DbSet<NumberNetworkCircle> NumberNetworkCircles { get; set; }
         public virtual DbSet<NumberType> NumberTypes { get; set; }
         public virtual DbSet<TransactionStatu> TransactionStatus { get; set; }
         public virtual DbSet<UserNumber> UserNumbers { get; set; }

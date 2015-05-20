@@ -17,7 +17,12 @@ namespace OpportunityService
             
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<IUsersRepoService>();
+            container.RegisterType<INetworksAndPlansService>();
+
+
             container.RegisterType<IUsersRepoService, UsersRepoService>();
+            container.RegisterType<INetworksAndPlansService, NetworkAndPlanService>();
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

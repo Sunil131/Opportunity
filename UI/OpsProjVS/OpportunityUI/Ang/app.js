@@ -1,1 +1,1 @@
-var opsApp = angular.module('opsApp', ['']);
+var opsApp = angular.module('opsApp', ['ngRoute', 'ngDropdowns']);

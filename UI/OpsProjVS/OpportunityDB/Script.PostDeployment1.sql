@@ -2815,30 +2815,32 @@ insert into NumberNetworkCircle values 	(7999,'','');
 
 --------- Network Names--------------
 
-Insert into Network (NetworkCode,Name) values 	('AC','AIRCEL');
-Insert into Network (NetworkCode,Name) values 	('AT','Bharti Airtel');
-Insert into Network (NetworkCode,Name) values 	('CC','BSNL - CellOne CDMA');
-Insert into Network (NetworkCode,Name) values 	('CG','BSNL - CellOne GSM');
-Insert into Network (NetworkCode,Name) values 	('DC','Videocon');
-Insert into Network (NetworkCode,Name) values 	('DP','MTNL - DOLPHIN');
-Insert into Network (NetworkCode,Name) values 	('ET','Etisalat');
-Insert into Network (NetworkCode,Name) values 	('ID','IDEA');
-Insert into Network (NetworkCode,Name) values 	('LM','Loop Mobile');
-Insert into Network (NetworkCode,Name) values 	('MT','MTS India');
-Insert into Network (NetworkCode,Name) values 	('PG','PING CDMA');
-Insert into Network (NetworkCode,Name) values 	('RC','Reliance Mobile CDMA');
-Insert into Network (NetworkCode,Name) values 	('RG','Reliance Mobile GSM');
-Insert into Network (NetworkCode,Name) values 	('RJ','Reliance Jio Infocomm');
-Insert into Network (NetworkCode,Name) values 	('SP','Spice Digital');
-Insert into Network (NetworkCode,Name) values 	('ST','S Tel');
-Insert into Network (NetworkCode,Name) values 	('T24','T24 (BIG BAZAAR)');
-Insert into Network (NetworkCode,Name) values 	('TD','TATA DOCOMO');
-Insert into Network (NetworkCode,Name) values 	('TI','Tata Indicom');
-Insert into Network (NetworkCode,Name) values 	('UN','Uninor');
-Insert into Network (NetworkCode,Name) values 	('VC','Virgin Mobile India CDMA');
-Insert into Network (NetworkCode,Name) values 	('VG','Virgin Mobile India GSM');
-Insert into Network (NetworkCode,Name) values 	('VF','Vodafone India');
-Insert into Network (NetworkCode,Name) values 	('VD','Videocon Mobile Services');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('AC','AIRCEL','aircel.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('AT','Bharti Airtel','airtel.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('CC','BSNL - CellOne CDMA','BSNL.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('CG','BSNL - CellOne GSM','BSNL.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('DP','MTNL - DOLPHIN','mtnl.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('ID','IDEA','idea.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('MT','MTS India','mts.png');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('RC','Reliance Mobile CDMA','reliance.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('RG','Reliance Mobile GSM','reliance.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('TD','TATA DOCOMO','tataIndicom.png');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('TI','Tata Indicom','tataIndicom.png');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('UN','Uninor','uninor.jpeg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('VC','Virgin Mobile India CDMA','Virgin.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('VG','Virgin Mobile India GSM','Virgin.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('VF','Vodafone India','vodafone.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('VD','Videocon Mobile Services','videocon.jpg');
+Insert into Network (NetworkCode,Name,NetworkImage) values 	('LM','Loop Mobile','loop.png');
+
+----------- Network May Be added in Future-----
+--Insert into Network (NetworkCode,Name,NetworkImage) values 	('DC','Videocon','videocon.jpg');
+--Insert into Network (NetworkCode,Name,NetworkImage) values 	('ET','Etisalat');
+--Insert into Network (NetworkCode,Name,NetworkImage) values 	('PG','PING CDMA','ping.png');
+--Insert into Network (NetworkCode,Name,NetworkImage) values 	('RJ','Reliance Jio Infocomm','reliance.jpg');
+--Insert into Network (NetworkCode,Name,NetworkImage) values 	('SP','Spice Digital','');
+--Insert into Network (NetworkCode,Name,NetworkImage) values 	('ST','S Tel');
+--Insert into Network (NetworkCode,Name,NetworkImage) values 	('T24','T24 (BIG BAZAAR)');
 
 --------------END Network Names------------
 

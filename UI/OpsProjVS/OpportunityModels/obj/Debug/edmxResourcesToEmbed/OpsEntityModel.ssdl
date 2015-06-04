@@ -7,6 +7,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="200" />
     <Property Name="NetworkCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="NetworkImage" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="NetworkCircle">
     <Key>

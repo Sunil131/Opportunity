@@ -9,5 +9,6 @@ namespace OpportunityModels.IBAL
     public interface INetworksAndPlansService
     {
         IEnumerable<NetworkCircle> GetAllNetworkCircles();
+        IEnumerable<Network> GetAllNetworks();
     }
 }

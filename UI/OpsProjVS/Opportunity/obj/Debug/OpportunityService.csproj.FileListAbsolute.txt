@@ -129,3 +129,4 @@ D:\Research\Ops\Opportunity\UI\OpsProjVS\Opportunity\bin\AutoMapper.xml
 D:\Research\Ops\Opportunity\UI\OpsProjVS\Opportunity\obj\Debug\OpportunityService.csprojResolveAssemblyReference.cache
 D:\Research\Ops\Opportunity\UI\OpsProjVS\Opportunity\obj\Debug\OpportunityService.dll
 D:\Research\Ops\Opportunity\UI\OpsProjVS\Opportunity\obj\Debug\OpportunityService.pdb
+D:\Research\Ops\Opportunity\UI\OpsProjVS\Opportunity\bin\AutoMapper.Net4.dll

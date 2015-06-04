@@ -13,3 +13,4 @@ D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\bin\Opportunity.dll
 D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\bin\Opportunity.pdb
 D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\obj\Debug\Opportunity.dll
 D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\obj\Debug\Opportunity.pdb
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityUI\obj\Debug\OpportunityUI.csprojResolveAssemblyReference.cache

@@ -22,6 +22,7 @@ namespace OpportunityModels
         public int ID { get; set; }
         public string Name { get; set; }
         public string NetworkCode { get; set; }
+        public string NetworkImage { get; set; }
     
         public virtual ICollection<NetworkPlan> NetworkPlans { get; set; }
     }

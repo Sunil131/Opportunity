@@ -16,5 +16,13 @@ namespace OpportunityModels.BAL
             //IEnumerable<NetworkCircle> circles = (IEnumerable<NetworkCircle>)(Mapper.Map<NetworkCircle>(dbContext.NetworkCircles.AsEnumerable<NetworkCircle>()));
             return dbContext.NetworkCircles.AsEnumerable<NetworkCircle>();
         }
+
+
+        public IEnumerable<Network> GetAllNetworks()
+        {
+            var dbContext = new dbOpsEntities();
+            return dbContext.Networks.AsEnumerable<Network>();
+        }
+
     }
 }

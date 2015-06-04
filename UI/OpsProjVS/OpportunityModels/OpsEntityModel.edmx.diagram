@@ -7,14 +7,14 @@
       <Diagram DiagramId="d3311107229644be828e0cb32037161d" Name="Diagram1">
         <EntityTypeShape EntityType="dbOpsModel.Network" Width="1.5" PointX="3" PointY="0.75" />
         <EntityTypeShape EntityType="dbOpsModel.NetworkCircle" Width="1.5" PointX="7.75" PointY="2.25" />
-        <EntityTypeShape EntityType="dbOpsModel.NetworkPlan" Width="1.5" PointX="5.25" PointY="2.5" />
+        <EntityTypeShape EntityType="dbOpsModel.NetworkPlan" Width="1.5" PointX="5.25" PointY="2.625" />
         <EntityTypeShape EntityType="dbOpsModel.NumberNetworkCircle" Width="1.5" PointX="7.75" PointY="5.25" />
-        <EntityTypeShape EntityType="dbOpsModel.NumberType" Width="1.5" PointX="0.75" PointY="3.875" />
-        <EntityTypeShape EntityType="dbOpsModel.TransactionStatu" Width="1.5" PointX="0.75" PointY="8.75" />
-        <EntityTypeShape EntityType="dbOpsModel.UserNumber" Width="1.5" PointX="3" PointY="3.5" />
-        <EntityTypeShape EntityType="dbOpsModel.UserPassword" Width="1.5" PointX="8" PointY="8.5" />
-        <EntityTypeShape EntityType="dbOpsModel.USER" Width="1.5" PointX="5.75" PointY="8.375" />
-        <EntityTypeShape EntityType="dbOpsModel.UserTransaction" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="dbOpsModel.NumberType" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="dbOpsModel.TransactionStatu" Width="1.5" PointX="0.75" PointY="8.875" />
+        <EntityTypeShape EntityType="dbOpsModel.UserNumber" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="dbOpsModel.UserPassword" Width="1.5" PointX="8" PointY="8.625" />
+        <EntityTypeShape EntityType="dbOpsModel.USER" Width="1.5" PointX="5.75" PointY="8.5" />
+        <EntityTypeShape EntityType="dbOpsModel.UserTransaction" Width="1.5" PointX="3" PointY="8.5" />
         <AssociationConnector Association="dbOpsModel.FK_NetworkID_NetworkPlan" />
         <AssociationConnector Association="dbOpsModel.FK_NetworkPlan_UserNumberID" />
         <AssociationConnector Association="dbOpsModel.FK_NUMBERTYPE" />

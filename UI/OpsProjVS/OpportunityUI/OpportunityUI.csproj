@@ -61,6 +61,7 @@
     <Content Include="Ang\Controller\controller.js" />
     <Content Include="Ang\Directives\directives.js" />
     <Content Include="Ang\Factory\factories.js" />
+    <Content Include="css\angular-dropdowns.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap-theme.css" />
@@ -143,6 +144,7 @@
     <Content Include="img\team\3.jpg" />
     <Content Include="img\team\4.jpg" />
     <Content Include="index.html" />
+    <Content Include="js\angular-dropdowns.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\fancybox\blank.gif" />
     <Content Include="js\fancybox\fancybox_loading.gif" />

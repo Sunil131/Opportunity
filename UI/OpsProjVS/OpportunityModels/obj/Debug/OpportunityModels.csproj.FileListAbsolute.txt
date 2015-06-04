@@ -36,3 +36,4 @@ D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\EntityFrame
 D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\bin\Debug\EntityFramework.SqlServer.xml
 D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\obj\Debug\OpportunityModels.dll
 D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\obj\Debug\OpportunityModels.pdb
+D:\Research\Ops\Opportunity\UI\OpsProjVS\OpportunityModels\obj\Debug\OpportunityModels.csprojResolveAssemblyReference.cache

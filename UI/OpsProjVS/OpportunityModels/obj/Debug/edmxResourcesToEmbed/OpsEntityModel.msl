@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Networks">
       <EntityTypeMapping TypeName="dbOpsModel.Network">
         <MappingFragment StoreEntitySet="Network">
+          <ScalarProperty Name="NetworkImage" ColumnName="NetworkImage" />
           <ScalarProperty Name="NetworkCode" ColumnName="NetworkCode" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ID" ColumnName="ID" />

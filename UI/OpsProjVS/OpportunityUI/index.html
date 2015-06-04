@@ -17,6 +17,7 @@
 		<link href="css/responsive-slider.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/angular-dropdowns.css">
 
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- skin -->
@@ -104,35 +105,8 @@
 				</div>
 				<div class="row pull-right">
 					<div class="col-sm-12">
-						<select >
-							<option> Delhi NCR</option>
-							<option> Haryana</option>
-							<option> UP</option>
-							<option> Himachal Pradesh</option>
-							<option> Punjab</option>
-							<option> Haryana</option>
-							<option> Tamil Nadu</option>
-							<option> Delhi NCR</option>
-							<option> Haryana</option>
-							<option> UP</option>
-							<option> Himachal Pradesh</option>
-							<option> Punjab</option>
-							<option> Haryana</option>
-							<option> Tamil Nadu</option>
-							<option> Delhi NCR</option>
-							<option> Haryana</option>
-							<option> UP</option>
-							<option> Himachal Pradesh</option>
-							<option> Punjab</option>
-							<option> Haryana</option>
-							<option> Tamil Nadu</option>
-							<option> Delhi NCR</option>
-							<option> Haryana</option>
-							<option> UP</option>
-							<option> Himachal Pradesh</option>
-							<option> Punjab</option>
-							<option> Haryana</option>
-							<option> Tamil Nadu</option>							
+						<select >				
+                            <option ng-repeat="item in NetworkCircles" value="{{item.OpertorCircleCode}}">{{item.OpertorCircleDescription}}</option>
 						</select>
 					</div>
 				</div>
@@ -151,9 +125,12 @@
 								  <div class="form-group">
 								    <div class="col-sm-10">
 								      <!-- <input type="text" class="form-control" id="inputOperator" placeholder="Operator" /> -->
-								        <select name="Operator" id="Operator" style="width:357px;">
-										       <option value="" data-description="Choos your Operator">Your Operator</option>
-										        <option value="Vodafone" title="img/operator/vodafone.jpg" >Vodafone</option>
+                                        <!--<select>
+                                            <option ng-repeat="item in allNetworks" value="{{item.NetworkCode}}" >{{item.Name}}</option>
+                                        </select>-->
+								        <!--<select name="Operator" id="Operator" style="width:357px;">
+										       <option value="" >Your Operator</option>
+                                                <option value="Vodafone" title="img/operator/vodafone.jpg" >Vodafone</option>
 										        <option value="Airtel" title="img/operator/airtel.jpg" >Airtel</option>
 										        <option value="BSNL" title="img/operator/BSNL.jpg" >BSNL</option>
 										        <option value="DoCoMo" title="img/operator/docomo.jpg" >DoCoMo</option>
@@ -164,8 +141,15 @@
 										        <option value="Uninor" title="img/operator/uninor.jpeg" >Uninor</option>
   										    </select> 
   										    
-								      	 <div class="dropdown col-lg-6">
-								      	</div>
+								      	 <div class="dropdown col-lg-4">
+								      	</div>-->
+                                        <!--<select name="Operator" id="Operator" style="width:357px;">
+                                            <option ng-repeat="item in allNetworks" value="{{item.NetworkCode}}" title="'img/operator/' + {{item.NetworkImage}}">{{item.Name}}</option>
+                                        </select>
+
+                                        <div class="dropdown col-lg-6">
+                                        </div>-->
+
 								    </div>
 								  </div>
 								  
@@ -1011,7 +995,7 @@
 	<script src="js/jquery.isotope.min.js"></script>
 	<script src="js/jquery.nicescroll.min.js"></script>
 	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="js/jquery.parallax-1.1.3.js" type="text/javascript" ></script>
+	<!--<script src="js/jquery.parallax-1.1.3.js" type="text/javascript" ></script>-->
 	<script src="js/skrollr.min.js"></script>		
 	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
 	<script src="js/jquery.localscroll-1.2.7-min.js"></script>
@@ -1023,6 +1007,8 @@
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.3.12/angular-route.js"></script>
+    <script src="js/angular-dropdowns.js"></script>
+
     
     
     
@@ -1066,7 +1052,7 @@
 	</script>
 <!-- For Image Dropdown -->
 <script language="javascript">
-	$("#Operator").msDropDown({visibleRows:5});
+	$("#Operator").msDropDown({visibleRows:4});
 </script>
 <script src="Ang/app.js"></script>
 <script src="Ang/Controller/controller.js"></script>

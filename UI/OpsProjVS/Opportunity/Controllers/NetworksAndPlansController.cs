@@ -22,15 +22,17 @@ namespace OpportunityService.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<NetworkCircle> GetAllNetworkCircles()
+        public IHttpActionResult GetAllNetworkCircles()
         {
-            return _netPlanService.GetAllNetworkCircles();
+            var networkCircles = _netPlanService. GetAllNetworkCircles();
+            return Ok(networkCircles);
         }
 
         [HttpGet]
-        public IEnumerable<NetworkCircle> GetAllNetworkCirclesandPlans()
+        public IHttpActionResult GetAllNetworks()
         {
-            return _netPlanService.GetAllNetworkCircles();
+            var allNetworks = _netPlanService.GetAllNetworks();
+            return Ok(allNetworks);
         }
         
     }

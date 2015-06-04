@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24EC8E5B-5231-4C33-8493-712FCD94F752}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Opportunity</RootNamespace>
+    <AssemblyName>Opportunity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ang\app.js" />
+    <Content Include="Ang\Controller\controller.js" />
+    <Content Include="Ang\Directives\directives.js" />
+    <Content Include="Ang\Factory\factories.js" />
+    <Content Include="css\angular-dropdowns.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\animate.min.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\Copy %282%29 of style.css" />
+    <Content Include="css\Copy of style.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\isotope.css" />
+    <Content Include="css\msdropdown\dd.css" />
+    <Content Include="css\msdropdown\flags.css" />
+    <Content Include="css\msdropdown\skin2.css" />
+    <Content Include="css\msdropdown\sprite.css" />
+    <Content Include="css\overwrite.css" />
+    <Content Include="css\responsive-slider.css" />
+    <Content Include="css\style.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\1.png" />
+    <Content Include="img\10.jpg" />
+    <Content Include="img\11.jpg" />
+    <Content Include="img\12.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\5.jpg" />
+    <Content Include="img\6.jpg" />
+    <Content Include="img\8.jpg" />
+    <Content Include="img\9.jpg" />
+    <Content Include="img\down-arrow.png" />
+    <Content Include="img\img1.jpg" />
+    <Content Include="img\img1.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\members1.jpg" />
+    <Content Include="img\members2.jpg" />
+    <Content Include="img\members3.jpg" />
+    <Content Include="img\operator\aircel.jpeg" />
+    <Content Include="img\operator\aircel.jpg" />
+    <Content Include="img\operator\airtel.jpg" />
+    <Content Include="img\operator\airtel.png" />
+    <Content Include="img\operator\bsnl.jpg" />
+    <Content Include="img\operator\BSNL.png" />
+    <Content Include="img\operator\docomo.jpg" />
+    <Content Include="img\operator\docomo.png" />
+    <Content Include="img\operator\idea.png" />
+    <Content Include="img\operator\mtnl.jpg" />
+    <Content Include="img\operator\mtnl.png" />
+    <Content Include="img\operator\mts.png" />
+    <Content Include="img\operator\reliance.png" />
+    <Content Include="img\operator\tataIndicom.jpg" />
+    <Content Include="img\operator\tataIndicom.png" />
+    <Content Include="img\operator\uninor.jpeg" />
+    <Content Include="img\operator\videocon.jpg" />
+    <Content Include="img\operator\vodafone.jpg" />
+    <Content Include="img\operator\vodafone.png" />
+    <Content Include="img\overlay.png" />
+    <Content Include="img\parallax\1.jpg" />
+    <Content Include="img\parallax\2.jpg" />
+    <Content Include="img\parallax\3.jpg" />
+    <Content Include="img\parallax\4.jpg" />
+    <Content Include="img\parallax\7.jpg" />
+    <Content Include="img\parallax\img1.jpg" />
+    <Content Include="img\parallax\img2.jpg" />
+    <Content Include="img\portfolio\1.jpg" />
+    <Content Include="img\portfolio\2.jpg" />
+    <Content Include="img\portfolio\3.jpg" />
+    <Content Include="img\portfolio\4.jpg" />
+    <Content Include="img\portfolio\5.jpg" />
+    <Content Include="img\portfolio\6.jpg" />
+    <Content Include="img\portfolio\7.jpg" />
+    <Content Include="img\portfolio\8.jpg" />
+    <Content Include="img\portfolio\9.jpg" />
+    <Content Include="img\portfolio\Thumbnail.jpg" />
+    <Content Include="img\team\1.jpg" />
+    <Content Include="img\team\1.png" />
+    <Content Include="img\team\2.jpg" />
+    <Content Include="img\team\3.jpg" />
+    <Content Include="img\team\4.jpg" />
+    <Content Include="index.html" />
+    <Content Include="js\angular-dropdowns.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\fancybox\blank.gif" />
+    <Content Include="js\fancybox\fancybox_loading.gif" />
+    <Content Include="js\fancybox\fancybox_loading_402x.gif" />
+    <Content Include="js\fancybox\fancybox_overlay.png" />
+    <Content Include="js\fancybox\fancybox_sprite.png" />
+    <Content Include="js\fancybox\fancybox_sprite_402x.png" />
+    <Content Include="js\fancybox\jquery.fancybox.css" />
+    <Content Include="js\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="js\function.js" />
+    <Content Include="js\grid.js" />
+    <Content Include="js\jquery-1.9.0.min.js" />
+    <Content Include="js\jquery.appear.js" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.flexslider.min.js" />
+    <Content Include="js\jquery.isotope.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.localscroll-1.2.7-min.js" />
+    <Content Include="js\jquery.nicescroll.min.js" />
+    <Content Include="js\jquery.scrollTo-1.4.3.1-min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="js\msdropdown\jquery.dd.js" />
+    <Content Include="js\msdropdown\jquery.dd.min.js" />
+    <Content Include="js\responsive-slider.js" />
+    <Content Include="js\responsive-slider.min.js" />
+    <Content Include="js\skrollr.min.js" />
+    <Content Include="js\SmoothScroll.js" />
+    <Content Include="js\stellar.js" />
+    <Content Include="js\validate.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="payment.html" />
+    <Content Include="scripts.js" />
+    <Content Include="skin\default.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="contact\config.php" />
+    <Content Include="contact\contact.php" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot%40" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="img\img.zip" />
+    <Content Include="js\fancybox\Descr.WD3" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ang\Partials\" />
+    <Folder Include="bin\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55116</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55116/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

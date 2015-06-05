@@ -1903,3 +1903,8 @@ color: blanchedalmond;
 .CCControls{
 	float: right
 }
+
+
+.selectedHighlight {
+  background-color: antiquewhite;
+}

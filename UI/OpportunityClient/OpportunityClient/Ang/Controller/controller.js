@@ -23,6 +23,12 @@ opsApp.controller('prepaidController', function ($scope, NetworkAndPlanService) 
     };
     getNetworkCircles();
     getNetworks();
+
+    $scope.networkCodeSelected = null;
+    $scope.selectedNetwork = function (networkCodeSelected) {
+        $scope.networkCodeSelected = networkCodeSelected
+    };
+
 })
 
 

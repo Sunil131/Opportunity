@@ -25,6 +25,7 @@ namespace OpportunityModels
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<JoloAPICode> JoloAPICodes { get; set; }
         public virtual DbSet<Network> Networks { get; set; }
         public virtual DbSet<NetworkCircle> NetworkCircles { get; set; }
         public virtual DbSet<NetworkPlan> NetworkPlans { get; set; }

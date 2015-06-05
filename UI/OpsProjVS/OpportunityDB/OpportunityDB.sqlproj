@@ -60,6 +60,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="DBComparison" />
+    <Folder Include="dbo\Functions\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\UserTransaction.sql" />
@@ -72,6 +73,8 @@
     <Build Include="dbo\Tables\NetworkCircle.sql" />
     <Build Include="dbo\Tables\Network.sql" />
     <Build Include="dbo\Tables\NumberNetworkCircle.sql" />
+    <Build Include="dbo\Tables\JoloAPICodes.sql" />
+    <Build Include="dbo\Functions\GetNetwokNameByCode.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DBComparison\SqlSchemaCompare1.scmp" />

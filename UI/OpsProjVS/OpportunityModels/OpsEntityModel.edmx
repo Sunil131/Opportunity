@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="dbOpsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="JoloAPICodes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CodeType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ServiceType" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
         <EntityType Name="Network">
           <Key>
             <PropertyRef Name="ID" />
@@ -166,7 +176,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetNetwokNameByCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+          <Parameter Name="networkCode" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="dbOpsModelStoreContainer">
+          <EntitySet Name="JoloAPICodes" EntityType="Self.JoloAPICodes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Network" EntityType="Self.Network" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NetworkCircle" EntityType="Self.NetworkCircle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NetworkPlan" EntityType="Self.NetworkPlan" Schema="dbo" store:Type="Tables" />
@@ -203,6 +217,7 @@
     <edmx:ConceptualModels>
       <Schema Namespace="dbOpsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="dbOpsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="JoloAPICodes" EntityType="dbOpsModel.JoloAPICode" />
           <EntitySet Name="Networks" EntityType="dbOpsModel.Network" />
           <EntitySet Name="NetworkCircles" EntityType="dbOpsModel.NetworkCircle" />
           <EntitySet Name="NetworkPlans" EntityType="dbOpsModel.NetworkPlan" />
@@ -234,6 +249,16 @@
             <End Role="UserPassword" EntitySet="UserPasswords" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="JoloAPICode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CodeType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Network">
           <Key>
             <PropertyRef Name="ID" />
@@ -411,6 +436,17 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbOpsModelStoreContainer" CdmEntityContainer="dbOpsEntities">
+          <EntitySetMapping Name="JoloAPICodes">
+            <EntityTypeMapping TypeName="dbOpsModel.JoloAPICode">
+              <MappingFragment StoreEntitySet="JoloAPICodes">
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Networks">
             <EntityTypeMapping TypeName="dbOpsModel.Network">
               <MappingFragment StoreEntitySet="Network">

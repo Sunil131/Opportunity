@@ -64,6 +64,9 @@
     <Compile Include="Configs\AutoMapperConfig.cs" />
     <Compile Include="IBAL\INetworksAndPlansService.cs" />
     <Compile Include="IBAL\IUsersRepoService.cs" />
+    <Compile Include="JoloAPICode.cs">
+      <DependentUpon>OpsEntityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\ApplicationUserModel.cs" />
     <Compile Include="Model\Networks.cs" />
     <Compile Include="Network.cs">
